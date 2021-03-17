@@ -52,10 +52,8 @@ visible=false
 clearImg(){
   this.url="";
 
-  if (!this.url==undefined) {
-    alert("Your delete is successful")
-
-  }
+  this.yposition=0;
+  this.xposition=0;
 }
 onDragEnded(event) {
   let element = event.source.getRootElement();
@@ -79,7 +77,6 @@ getPosition(el) {
 }
 
 saveImgData(){
-//   this.onDragEnded()
 this.visible=true
 
 }
