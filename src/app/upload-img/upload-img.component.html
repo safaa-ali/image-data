@@ -1,0 +1,45 @@
+
+
+
+<div class="container">
+<div class="row text-center mt-4 mb-4">
+  <div class="upload-container">
+    <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+
+    <div class="custom-upload">
+      <input type="file" (change)="selectFile($event)" style="display: none" id="file">
+      <label class="" for="file" class="custom-label" >choose image</label>
+      <div class="message">{{ message }}</div>
+
+    </div>
+
+  </div>
+
+
+
+</div>
+<div class="row">
+  <div class="example-boundary">
+    <img  [src]="url" *ngIf="url" class="example-box" cdkDragBoundary=".example-boundary" cdkDrag (cdkDragEnded)="onDragEnded($event)">
+  </div>
+
+</div>
+<div class="row mb-4 mt-4">
+<div class="col-lg-3 mb-2">
+  <button  class="btn btn-success w-100" (click)="saveImgData()">SAVE</button>
+<div class="mt-4" [ngClass]="{info: !visible}" #info>
+  <p *ngIf="xposition">X-Position: {{xposition}}</p>
+  <p *ngIf="yposition">Y-Position: {{yposition}}</p>
+</div>
+
+
+</div>
+<div class="col-lg-3">
+  <button   class="btn btn-danger w-100" (click)="clearImg()">DELETE</button>
+</div>
+</div>
+</div>
+
+
+
+
